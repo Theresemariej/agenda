@@ -6,15 +6,19 @@ import java.util.*;
 /**
  * Description : An agenda that stores events
  */
-public class Agenda {
+    public class Agenda {
+    private ArrayList <Event> e ; 
+
+    public Agenda () {
+    this.e = new ArrayList <Event> (); 
+}
     /**
      * Adds an event to this agenda
      *
      * @param e the event to add
      */
-    public void addEvent(Event e) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+    public void addEvent(Event event) {
+        e.add(event) ; 
     }
 
     /**
@@ -23,8 +27,20 @@ public class Agenda {
      * @param day the day toi test
      * @return a list of events that occur on that day
      */
-    public List<Event> eventsInDay(LocalDate day) {
-        // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+    public ArrayList <Event>  eventsInDay(LocalDate day) {
+        ArrayList <Event> roudoudou = new ArrayList <Event> () ;
+        for (Event event : e){
+       if(event.isInDay(day)) {
+       roudoudou.add(event) ;
+       }
+        }
+        return roudoudou  ; 
     }
+
+
+
+
+
+
 }
+
